@@ -12,6 +12,11 @@ public with sharing class AccountOps {
         for(Integer i= 0;i<100;i++){
             update acc;
         }
+        try{
+            
+        }catch(Exception e){
+            
+        }
         
         return acc;
     }

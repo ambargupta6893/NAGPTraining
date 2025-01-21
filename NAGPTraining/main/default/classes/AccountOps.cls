@@ -1,23 +1,31 @@
+/**
+ * @description Demo class
+ */
 public with sharing class AccountOps {
-    private AccountOps(){
+    /**
+     * @description setDefaultDescription
+     * @param AccountInput
+     * @return AccountOutput
+     */
+    /*private AccountOps(){
         //..
-    }
+    }*/
     
     public static Account setDefaultDescription(Account acc){
         // if statement must use braces
-        if(acc.Description == null) acc.Description = 'Please provide a Description';
-        else return acc;
+        if(acc.Description == null){
+          acc.Description = 'Please provide a Description';  
+        } 
+        //else return acc;
         
         //Avoid DML statements inside Loops
-        for(Integer i= 0;i<100;i++){
+        /*for(Integer i= 0;i<100;i++){
+            update acc;
+        }*/
+        if(acc.getSobjectType().getDescribe().isAccessible()){
+            //Avoid DML statements inside loops
             update acc;
         }
-        try{
-            
-        }catch(Exception e){
-            
-        }
-        
         return acc;
     }
 }

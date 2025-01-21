@@ -11,7 +11,7 @@ public with sharing class AccountOps {
         //..
     }*/
     
-    public static Account setDefaultDescription(Account acc){
+    public Account setDefaultDescription(Account acc){
         // if statement must use braces
         if(acc.Description == null){
           acc.Description = 'Please provide a Description';  
@@ -24,7 +24,9 @@ public with sharing class AccountOps {
         }*/
         if(acc.getSobjectType().getDescribe().isAccessible()){
             //Avoid DML statements inside loops
+            if (Schema.sObjectType.Account.fields.Description.isUpdateable()) {
             update acc;
+            }
         }
         return acc;
     }

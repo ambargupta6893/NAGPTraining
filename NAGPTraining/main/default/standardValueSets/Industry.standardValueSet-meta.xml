@@ -161,4 +161,9 @@
         <default>false</default>
         <label>Other</label>
     </standardValue>
+    <standardValue>
+        <fullName>Corporations</fullName>
+        <default>false</default>
+        <label>Corporations</label>
+    </standardValue>
 </StandardValueSet>
